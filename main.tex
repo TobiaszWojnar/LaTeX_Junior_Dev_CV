@@ -1,0 +1,32 @@
+\documentclass[9pt]{juniordevcv} %font size adjust based on how much you have to say
+
+\begin{document}
+
+    %Important no to have empty lines in between next block
+    \tikz[remember picture,overlay] \draw [fill,black!5] (current page.north west) rectangle +(0.345\paperwidth,-\paperheight);
+    \begin{minipage}[t]{.27\textwidth}
+        \include{sidebar.tex}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{.67\textwidth}
+        \include{content.tex}
+    \end{minipage}
+
+    \vspace{-26pt}
+    \tikzmark{here}
+    \begin{tikzpicture}[overlay, remember picture]
+      \fill [black!10] (current page.west |- {pic cs:here}) rectangle (current page.south east);
+    \end{tikzpicture}
+    \vspace{4pt}
+
+    %RODO
+    {\small%\ssmall
+        \noindent I consent to the processing of my personal data by 
+        {\color{blue}\textbf{[nazwa firmy]}}
+        contained in the application documents for the purpose of the current recruitment procedure and for the purposes of any future recruitment processes.
+        % Wyrażam zgodę na przetwarzanie moich danych osobowych przez 
+        % {\color{blue}\textbf{[nazwa firmy]}
+        % w celu przeprowadzenia obecnego postępowania rekrutacyjnego oraz na potrzeby przyszłych rekrutacji.
+    }
+    
+\end{document}
